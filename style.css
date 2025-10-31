@@ -1,0 +1,219 @@
+:root {
+  --bg: #f7f7f7;
+  --white: #ffffff;
+  --negro: #000000;
+  --rojo: #E31414;
+  --gris: #ADADAD;
+
+  --size-large: clamp(34px, 4vw, 54px);
+  --size-medium: clamp(23px, 2.5vw, 28px);
+  --size-normal: clamp(18px, 2vw, 14px);
+
+  --size-pequeño:/*para excepciones/footer*/ clamp(15px, 1.5vw, 12px);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+}
+
+html, body {
+  margin: 0;
+  background: var(--bg);
+  font-family:'Arial';
+  color: var(--negro);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.page-wrap {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main {
+  width: 100%;
+  max-width: 1200px; /* límite razonable para ni bardearla demasiado ancho con pantallas 4K */
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 130px 0px;
+  gap: 100px;
+}
+
+
+.cardprincipal {
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  padding: 60px;
+  text-align: left;
+  font-size: var(--size-medium);
+  color: var(--negro);
+  line-height: 1.4;
+  /*border: solid red 8px;*/
+}
+
+.inicio {
+  font-size: var(--size-large);
+}
+
+.cajacomprar {
+  max-width: 900px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 40px;
+  text-align: left;
+  color: var(--negro);
+  font-size: var(--size-medium);
+  line-height: 1.4;
+  border: solid var(--rojo) 2px;
+  border-radius: 20px;
+  background: var(--bg);
+}
+
+.fotolibro {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  align-self: center;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+
+.comprar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+a {
+  color: inherit;         /* hereda el color del padre (o variable del botón) */
+  text-decoration: none;  /* quita el subrayado y color azul */
+}
+
+
+/* BOTON */
+.cta-btn {
+  background: var(--rojo);
+  color: var(--bg);
+  font-size: var(--size-medium);
+  font-weight: 700;
+  border: none;
+  padding: 14px 26px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+  margin-top: 20px;
+}
+
+.cta-btn:hover {
+  background: var(--negro);
+  color: var(--bg);
+}
+
+.cta-btn.clicked {
+  background: var(--bg);
+  color:var(--rojo);
+  border: 2px solid var(--rojo);
+}
+
+/* BOTON 2 */
+.cta-btn2 {
+  background: var(--gris);
+  color: var(--bg);
+  font-size: var(--size-medium);
+  font-weight: 700;
+  border: none;
+  padding: 14px 26px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  align-self: flex-start;
+  margin-top: 20px;
+}
+
+
+
+/* RESPONSIVE:*/
+
+/*En MÓVILES pasa a columna */
+@media (max-width: 700px) {
+
+  .main {
+    padding: 60px 0px;
+    gap: 60px;
+  }
+
+  .cardprincipal {
+    padding: 30px;
+    gap: 50px;
+  }
+
+  .cajacomprar {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .comprar {
+    align-items: center;
+  }
+
+  .cta-btn {
+    align-self: center;
+  }
+
+    .cta-btn2 {
+    align-self: center;
+  }
+}
+
+/* TABLETS */
+@media (max-width: 1024px) {
+  .cardprincipal, .cajacomprar {
+    padding: 40px 30px;
+    gap: 60px;
+  }
+
+  .cajacomprar {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .fotolibro {
+    max-width: 250px;
+  }
+}
+
+/* PANTALLAS GRANDES */
+@media (min-width: 1400px) {
+  :root {
+    --size-large: clamp(40px, 2vw, 64px);
+    --size-medium: clamp(24px, 1.5vw, 32px);
+  }
+
+  .cardprincipal {
+    max-width: 1100px;
+  }
+
+  .cajacomprar {
+    max-width: 1100px;
+  }
+}
+  
