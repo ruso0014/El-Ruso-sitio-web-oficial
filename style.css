@@ -47,6 +47,7 @@ body {
   align-items: center;
   text-align: center;
   padding: 130px 0px;
+  padding-bottom: 40px;
   gap: 100px;
 }
 
@@ -148,6 +149,28 @@ a {
   margin-top: 20px;
 }
 
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  background-color: var(--bg);
+  padding-bottom: 10px;
+}
+
+.derechos{
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  font-size: var(--size-pequeño);
+  color: var(--negro);
+  line-height: 1.2;
+  padding-top: 30px;
+}
+
 
 
 /* RESPONSIVE:*/
@@ -168,6 +191,7 @@ a {
   .cajacomprar {
     flex-direction: column;
     text-align: center;
+    margin: 0 16px /*Que el borde rojo no se pegue a los costados de la pantalla en celu*/
   }
 
   .comprar {
